@@ -18,7 +18,7 @@ endif
 " Use :help 'option' to see the documentation for the given option.
 set confirm
 set hidden
-set noswapfile
+"set noswapfile
 set nobackup
 set relativenumber
 set number
@@ -125,4 +125,6 @@ set smarttab
 set smartindent
 set expandtab
 
+" Live substitution
+set inccommand=split
 "vim:set ft=vim et sw=2:

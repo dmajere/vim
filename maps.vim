@@ -20,7 +20,7 @@ nnoremap <C-Y> <C-W><C-H>
 set pastetoggle=<F2>
 nmap <F3> :GitGutterToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <F9> :ToggleBufExplorer <CR>
+nmap <F9> :MBEToggle <CR>
 map <F10> <plug>NERDTreeTabsToggle<CR>
 
 " ---------------
