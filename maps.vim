@@ -1,20 +1,20 @@
 " --------------
 " Tabs
 " ---------------
-"map <A-n> :tabnext<CR>
-"map <A-p> :tabprevious<CR>
-"nmap <A-t> :tabnew<CR>
-"nmap <A-w> :tabclose<CR>
+map <A-n> :tabnext<CR>
+map <A-m> :tabprevious<CR>
+nmap <A-f> :tabnew<CR>
+nmap <A-w> :tabclose<CR>
 
 " ---------------
 " Splits
 " ---------------
-nmap <C-L> :sp<CR>
-nmap <C-K> :vsp<CR>
-nnoremap <C-N> <C-W><C-J>
-nnoremap <C-E> <C-W><C-K>
-nnoremap <C-O> <C-W><C-L>
-nnoremap <C-Y> <C-W><C-H>
+nmap <C-M> :sp<CR>
+nmap <C-N> :vsp<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 
 set pastetoggle=<F2>

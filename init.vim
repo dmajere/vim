@@ -16,7 +16,10 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimshell')
 
 "" Workman Layout
-call dein#add('nicwest/vim-workman', {'rev': '42a6e2'})
+"call dein#add('nicwest/vim-workman') ", {'rev': '42a6e2'})
+"
+let g:python2_host_prog = '/Users/dmitrijfedorov/.pyenv/shims/python'
+let g:python3_host_prog = '/Users/dmitrijfedorov/.pyenv/shims/python3'
 
 ""Collor
 call dein#add('morhetz/gruvbox')
@@ -33,6 +36,8 @@ call dein#add('chase/vim-ansible-yaml')
 call dein#add('ekalinin/Dockerfile.vim')
 call dein#add('fatih/vim-go')
 call dein#add('elixir-lang/vim-elixir')
+call dein#add('vim-scripts/groovy.vim', {'on_ft': ['Jenkinsfile']})
+call dein#add('mustache/vim-mustache-handlebars.git')
 
 ""Autocomplete
 call dein#add('Shougo/deoplete.nvim')
@@ -43,8 +48,11 @@ call dein#add('zchee/deoplete-go', {'build': 'make'})
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 
+" Clojure
+call dein#add('hkupty/iron.nvim')
 
 ""Utils
+call dein#add('mhinz/vim-startify')
 call dein#add('scrooloose/nerdtree')
 call dein#add('jistr/vim-nerdtree-tabs')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
@@ -77,7 +85,8 @@ set background=dark
 colorscheme gruvbox
 
 "" Enable workman layout
-call workman#normal_qwerty()
+"call workman#normal_qwerty()
+
 
 source ~/.config/nvim/sensible.vim
 source ~/.config/nvim/airline.vim
@@ -120,3 +129,22 @@ nnoremap <C-V>     v
 vnoremap    v   <C-V>
 vnoremap <C-V>     v
 set title titlestring=
+
+autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
+
+
+" Workspace Setup
+" ----------------
+tnoremap <Leader><ESC> <C-\><C-n>
+
+function! WS()
+    e term://zsh
+    file zsh
+    vsp
+    "wincmd l
+    "sp term://zsh
+    "resize 4
+    "wincmd h
+    Startify
+endfunction
+command! -register WS call WS()
