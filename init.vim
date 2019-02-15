@@ -15,15 +15,11 @@ call dein#add('Shougo/dein.vim')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell')
 
-"" Workman Layout
-"call dein#add('nicwest/vim-workman') ", {'rev': '42a6e2'})
-"
 let g:python2_host_prog = '/Users/dmitrijfedorov/.pyenv/shims/python'
 let g:python3_host_prog = '/Users/dmitrijfedorov/.pyenv/shims/python3'
 
 ""Collor
 call dein#add('morhetz/gruvbox')
-call dein#add('fatih/molokai')
 call dein#add('ryanoasis/vim-devicons')
 
 ""Syntax
@@ -78,7 +74,6 @@ endif
 "End dein Scripts-------------------------
 "
 """ Collor scheme
-"colorscheme molokai
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
