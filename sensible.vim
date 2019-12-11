@@ -76,9 +76,8 @@ if !&sidescrolloff
 endif
 set display+=lastline
 
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
+set encoding=utf-8
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h12
 
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
@@ -130,3 +129,4 @@ set expandtab
 " Live substitution
 set inccommand=split
 "vim:set ft=vim et sw=2:
+

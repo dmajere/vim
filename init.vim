@@ -2,6 +2,7 @@
 if &compatible
     set nocompatible               " Be iMproved
 endif
+
 " Required:
 set runtimepath^=~/.nvim/bundle/repos/github.com/Shougo/dein.vim
 
@@ -12,11 +13,19 @@ call dein#begin(expand('~/.nvim/bundle'))
 " Required:
 call dein#add('Shougo/dein.vim')
 
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell')
+let g:python2_host_prog = expand('~/.pyenv/shims/python')
+let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 
-let g:python2_host_prog = '/Users/dmitrijfedorov/.pyenv/shims/python'
-let g:python3_host_prog = '/Users/dmitrijfedorov/.pyenv/shims/python3'
+""Utils
+call dein#add('mhinz/vim-startify')
+call dein#add('scrooloose/nerdtree')
+call dein#add('jistr/vim-nerdtree-tabs')
+call dein#add('bling/vim-airline')
+call dein#add('scrooloose/syntastic')
+call dein#add('scrooloose/nerdcommenter')
+call dein#add('sbdchd/neoformat')
+
+call dein#add('tpope/vim-surround')
 
 ""Collor
 call dein#add('morhetz/gruvbox')
@@ -30,38 +39,14 @@ call dein#add('tpope/vim-markdown', {'on_ft': ['md']})
 call dein#add('mitsuhiko/vim-jinja', {'on_ft': ['j2']})
 call dein#add('chase/vim-ansible-yaml')
 call dein#add('ekalinin/Dockerfile.vim')
-call dein#add('fatih/vim-go')
-call dein#add('elixir-lang/vim-elixir')
-call dein#add('vim-scripts/groovy.vim', {'on_ft': ['Jenkinsfile']})
-call dein#add('mustache/vim-mustache-handlebars.git')
 
 ""Autocomplete
 call dein#add('Shougo/deoplete.nvim')
-call dein#add('zchee/deoplete-jedi')
-call dein#add('zchee/deoplete-go', {'build': 'make'})
+call dein#add('deoplete-plugins/deoplete-jedi')
+call dein#add('davidhalter/jedi-vim')
+call dein#add('neomake/neomake')
 
-" Snippets
-call dein#add('SirVer/ultisnips')
-call dein#add('honza/vim-snippets')
-
-" Clojure
-call dein#add('hkupty/iron.nvim')
-
-""Utils
-call dein#add('mhinz/vim-startify')
-call dein#add('scrooloose/nerdtree')
-call dein#add('jistr/vim-nerdtree-tabs')
-call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('tpope/vim-fugitive')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('bling/vim-airline')
-call dein#add('majutsushi/tagbar')
-call dein#add('scrooloose/syntastic')
-call dein#add('jlanzarotta/bufexplorer', {'if': 0})
-call dein#add('fholgado/minibufexpl.vim')
-call dein#add('godlygeek/tabular')
-call dein#add('tpope/vim-surround')
-call dein#add('vitorgalvao/autoswap_mac')
+" call dein#add('vitorgalvao/autoswap_mac')
 
 "" Required:
 call dein#end()
@@ -73,6 +58,15 @@ if dein#check_install()
 endif
 "End dein Scripts-------------------------
 "
+"
+
+let g:deoplete#enable_at_startup = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#use_splits_not_buffers = "right"
+let g:neomake_python_enabled_makers = ['pylint']
+call neomake#configure#automake('nrwi', 500)
+set clipboard=unnamed
+
 """ Collor scheme
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark = 'hard'
@@ -85,14 +79,9 @@ colorscheme gruvbox
 
 source ~/.config/nvim/sensible.vim
 source ~/.config/nvim/airline.vim
-source ~/.config/nvim/tagbar.vim
 source ~/.config/nvim/maps.vim
 source ~/.config/nvim/syntastic.vim
-source ~/.config/nvim/go.vim
 source ~/.config/nvim/functions.vim
-source ~/.config/nvim/gitgutter.vim
-source ~/.config/nvim/autocomplete.vim
-source ~/.config/nvim/snippets.vim
 
 
 "====[ Make the 81st column stand out ]====================
